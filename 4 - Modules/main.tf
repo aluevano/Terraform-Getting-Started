@@ -26,5 +26,7 @@ module "resource_group_creator" {
 module "storage_account" {
   source = "./StorageAccount"
   resource_group_name = module.resource_group_creator.resource_group_value
-  
+  depends_on = [
+    module.resource_group_creator
+  ]
 }
